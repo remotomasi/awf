@@ -22,9 +22,9 @@ with open('datas.csv') as file:
     dataset.append(row)    
     count += 1
 
-print(dataset)
+# print(dataset)
 dataset = [[int(float(j)) for j in i] for i in dataset]
-print(dataset)
+# print(dataset)
 
 def sigmoide_p(t):
   return sigmoide(t)*(1-sigmoide(t))
