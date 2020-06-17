@@ -1,6 +1,7 @@
 import math as mt
 import random as rd
 import csv
+import sys
 
 rd.seed(1)
 
@@ -74,6 +75,15 @@ def train():
 
 w1, w2, w3, b = train()
 
-previsione=RN(2.3,7.0,0.3)
+# input values from user
+try:
+  t, h, w = map(float,input('Enter your input: (temp, hum, wind) ').split())
+except ValueError:
+  print('Not a number')
+  sys.exit(1)
 
+# call the function
+previsione=RN(t, h, w)
+
+# print the result
 print(previsione)
