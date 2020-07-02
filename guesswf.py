@@ -12,7 +12,7 @@ def RN(m1,m2,m3,m4):
 def sigmoide(t):
   return 1/(1+mt.exp(-t))
 
-# the two parameters of the dataset are temp and hum now
+# the two parameters of the dataset are temp, hum, wind speed
 with open('data_fin.csv') as file:
   reader = csv.reader(file)
 
