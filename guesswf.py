@@ -16,7 +16,7 @@ def sigmoide(t):
 
 
 # the two parameters of the dataset are temp, hum, wind speed
-with open('data_fin.csv') as file:
+with open('april21-22.csv') as file:
     reader = csv.reader(file)
 
     count = 0
@@ -96,5 +96,13 @@ except ValueError:
 # call the function
 previsione = RN(t, h, w, dp)
 
+# print weights
+print('w1:',w1,'w2:', w2,'w3:', w3,'b:', b)
+
 # print the result
 print(previsione)
+
+if previsione < 0.5:
+    print('>> Nessuna precipitazione')
+else:
+    print('>> Possibile pioggia')
