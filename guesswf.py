@@ -15,8 +15,8 @@ def sigmoide(t):
     return 1 / (1 + mt.exp(-t))
 
 
-# the two parameters of the dataset are temp, hum, wind speed
-with open('april21-22.csv') as file:
+# the two parameters of the dataset are temp, hum, dew point, wind speed
+with open('datasGen22-23-24.csv') as file:
     reader = csv.reader(file)
 
     count = 0
@@ -88,7 +88,7 @@ w1, w2, w3, w4, b = train()
 # input values from user
 try:
     t, h, w, dp = map(float, input(
-        'Enter your input: (temp hum wind dew point) ').split())
+        'Enter your input: (temp hum dew point wind) ').split())
 except ValueError:
     print('Not a number')
     sys.exit(1)
